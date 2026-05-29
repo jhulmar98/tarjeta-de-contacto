@@ -1,0 +1,472 @@
+/* =========================================================
+   TARJETA DIGITAL INTELIGENTE
+   PRODUCCIÓN ENTERPRISE
+========================================================= */
+
+:root{
+
+    --primary:#1F3C88;
+    --primary-dark:#14295C;
+
+    --accent:#F97316;
+    --accent-dark:#EA580C;
+
+    --bg:#F4F7FB;
+
+    --card:#FFFFFF;
+
+    --text:#1E293B;
+    --text-soft:#64748B;
+
+    --border:#E2E8F0;
+
+    --shadow:
+        0 15px 40px rgba(15,23,42,.10);
+
+    --shadow-lg:
+        0 25px 60px rgba(15,23,42,.18);
+
+    --radius-xl:28px;
+    --radius-lg:22px;
+    --radius-md:16px;
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,
+body{
+    height:100%;
+}
+
+body{
+
+    font-family:
+        Inter,
+        system-ui,
+        sans-serif;
+
+    background:
+        linear-gradient(
+            135deg,
+            #EEF2FF,
+            #F8FAFC
+        );
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+
+    overflow:hidden;
+}
+
+/* =========================================================
+   OVERLAY
+========================================================= */
+
+.overlay{
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+        rgba(15,23,42,.35);
+
+    backdrop-filter:
+        blur(8px);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    z-index:9999;
+}
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal-registro{
+
+    width:100%;
+    max-width:420px;
+
+    background:#fff;
+
+    border-radius:28px;
+
+    padding:32px;
+
+    box-shadow:
+        var(--shadow-lg);
+
+    animation:
+        aparecer .25s ease;
+}
+
+.modal-registro h2{
+
+    text-align:center;
+
+    color:var(--primary);
+
+    font-size:28px;
+
+    margin-bottom:10px;
+}
+
+.modal-registro p{
+
+    text-align:center;
+
+    color:var(--text-soft);
+
+    margin-bottom:22px;
+
+    font-size:14px;
+}
+
+.modal-registro input{
+
+    width:100%;
+
+    height:52px;
+
+    padding:0 16px;
+
+    border-radius:16px;
+
+    border:
+        1px solid var(--border);
+
+    font-size:15px;
+
+    margin-bottom:14px;
+
+    transition:.15s ease;
+}
+
+.modal-registro input:focus{
+
+    outline:none;
+
+    border-color:var(--primary);
+
+    box-shadow:
+        0 0 0 4px rgba(31,60,136,.10);
+}
+
+.modal-registro button{
+
+    width:100%;
+
+    height:52px;
+
+    border:none;
+
+    border-radius:16px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--accent),
+            var(--accent-dark)
+        );
+
+    color:#fff;
+
+    font-size:15px;
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:.18s ease;
+}
+
+.modal-registro button:hover{
+
+    transform:translateY(-2px);
+
+    filter:brightness(1.03);
+}
+
+/* =========================================================
+   CONTENIDO BLOQUEADO
+========================================================= */
+
+.bloqueado{
+
+    filter:
+        blur(12px);
+
+    pointer-events:none;
+
+    user-select:none;
+}
+
+/* =========================================================
+   CONTENIDO
+========================================================= */
+
+.contenido{
+
+    width:100%;
+    max-width:720px;
+
+    transition:.25s ease;
+}
+
+/* =========================================================
+   CARD PRINCIPAL
+========================================================= */
+
+.header-card{
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary-dark)
+        );
+
+    color:white;
+
+    text-align:center;
+
+    padding:40px 30px;
+
+    border-radius:
+        var(--radius-xl)
+        var(--radius-xl)
+        0
+        0;
+
+    box-shadow:
+        var(--shadow);
+}
+
+#nombreUsuario{
+
+    font-size:34px;
+    font-weight:900;
+
+    margin-bottom:10px;
+}
+
+#cargoUsuario{
+
+    font-size:18px;
+    font-weight:500;
+
+    opacity:.95;
+}
+
+/* =========================================================
+   VIDEO
+========================================================= */
+
+.video-card{
+
+    background:#000;
+
+    aspect-ratio:16/9;
+
+    overflow:hidden;
+}
+
+.video-card iframe{
+
+    width:100%;
+    height:100%;
+
+    border:none;
+}
+
+/* =========================================================
+   BOTONES
+========================================================= */
+
+.acciones{
+
+    background:#fff;
+
+    padding:28px;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:14px;
+
+    border-radius:
+        0
+        0
+        var(--radius-xl)
+        var(--radius-xl);
+
+    box-shadow:
+        var(--shadow);
+}
+
+.btn{
+
+    height:56px;
+
+    border-radius:18px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-decoration:none;
+
+    font-size:15px;
+    font-weight:900;
+
+    transition:.18s ease;
+}
+
+.btn:hover{
+
+    transform:translateY(-2px);
+}
+
+.btn-contacto{
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--primary-dark)
+        );
+
+    color:white;
+}
+
+.btn-web{
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--accent),
+            var(--accent-dark)
+        );
+
+    color:white;
+}
+
+/* =========================================================
+   ANIMACIÓN
+========================================================= */
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:
+            translateY(15px);
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:768px){
+
+    #nombreUsuario{
+
+        font-size:28px;
+    }
+
+    #cargoUsuario{
+
+        font-size:16px;
+    }
+
+    .modal-registro{
+
+        padding:24px;
+    }
+}
+
+/* =========================================================
+   MÓVIL
+========================================================= */
+
+@media(max-width:600px){
+
+    body{
+
+        padding:14px;
+    }
+
+    .modal-registro{
+
+        width:100%;
+        max-width:none;
+
+        border-radius:22px;
+    }
+
+    #nombreUsuario{
+
+        font-size:24px;
+    }
+
+    #cargoUsuario{
+
+        font-size:15px;
+    }
+
+    .header-card{
+
+        padding:30px 20px;
+    }
+
+    .acciones{
+
+        padding:20px;
+    }
+
+    .btn{
+
+        height:52px;
+    }
+}
+
+/* =========================================================
+   iPHONE PEQUEÑO
+========================================================= */
+
+@media(max-width:390px){
+
+    #nombreUsuario{
+
+        font-size:22px;
+    }
+
+    .modal-registro h2{
+
+        font-size:24px;
+    }
+}

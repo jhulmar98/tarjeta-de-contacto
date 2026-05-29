@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta Digital</title>
+
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+
+    <!-- =====================================
+         MODAL REGISTRO
+    ====================================== -->
+
+    <div id="overlay" class="overlay">
+
+        <div class="modal-registro">
+
+            <h2>Bienvenido 👋</h2>
+
+            <p>
+                Registra tus datos para continuar
+            </p>
+
+            <input
+                type="text"
+                id="nombreVisitante"
+                placeholder="Nombre completo">
+
+            <input
+                type="tel"
+                id="telefonoVisitante"
+                placeholder="Número de teléfono">
+
+            <button id="btnRegistrar">
+                Registrar
+            </button>
+
+        </div>
+
+    </div>
+
+    <!-- =====================================
+         CONTENIDO PRINCIPAL
+    ====================================== -->
+
+    <div id="contenido" class="contenido bloqueado">
+
+        <!-- CABECERA -->
+
+        <section class="header-card">
+
+            <h1 id="nombreUsuario">
+                Cargando...
+            </h1>
+
+            <h2 id="cargoUsuario">
+                Cargo
+            </h2>
+
+        </section>
+
+        <!-- VIDEO -->
+
+        <section class="video-card">
+
+            <iframe
+                id="videoUsuario"
+                src=""
+                allow="autoplay; encrypted-media"
+                allowfullscreen>
+            </iframe>
+
+        </section>
+
+        <!-- BOTONES -->
+
+        <section class="acciones">
+
+            <a
+                id="btnGuardarContacto"
+                href="#"
+                class="btn btn-contacto">
+
+                Guardar contacto
+
+            </a>
+
+            <a
+                id="btnWeb"
+                href="#"
+                target="_blank"
+                class="btn btn-web">
+
+                Visitar sitio web
+
+            </a>
+
+        </section>
+
+    </div>
+
+    <script type="module" src="index.js"></script>
+
+</body>
+
+</html>
