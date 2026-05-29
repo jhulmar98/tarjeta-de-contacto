@@ -1,6 +1,6 @@
 /* =========================================================
    TARJETA DIGITAL INTELIGENTE
-   VERSIÓN PRODUCCIÓN
+   JHULMAR MÁRQUEZ
 ========================================================= */
 
 import { initializeApp }
@@ -42,7 +42,6 @@ const db =
 
 /* =========================================================
    USUARIOS
-   SOLO EDITAS AQUÍ
 ========================================================= */
 
 const usuarios = {
@@ -122,7 +121,7 @@ const usuarios = {
 };
 
 /* =========================================================
-   LEER CÓDIGO DEL QR
+   LEER QR
 ========================================================= */
 
 const params =
@@ -134,13 +133,13 @@ const codigo =
     params.get("codigo");
 
 /* =========================================================
-   VALIDAR QR
+   VALIDAR
 ========================================================= */
 
-if (
+if(
     !codigo ||
     !usuarios[codigo]
-) {
+){
 
     alert(
         "Código QR inválido"
@@ -155,7 +154,7 @@ const usuario =
     usuarios[codigo];
 
 /* =========================================================
-   MOSTRAR DATOS
+   CARGAR DATOS
 ========================================================= */
 
 document
@@ -203,7 +202,7 @@ document
 `https://www.youtube.com/embed/${videoID}?autoplay=1&mute=1&playsinline=1`;
 
 /* =========================================================
-   SITIO WEB
+   WEB
 ========================================================= */
 
 document
@@ -214,7 +213,7 @@ document
     usuario.web;
 
 /* =========================================================
-   GUARDAR CONTACTO
+   AGREGAR A CONTACTOS
 ========================================================= */
 
 document
@@ -245,13 +244,13 @@ END:VCARD`;
                 }
             );
 
-        const fileURL =
+        const vcardURL =
             URL.createObjectURL(
                 blob
             );
 
         window.location.href =
-            fileURL;
+            vcardURL;
     }
 );
 
@@ -335,13 +334,12 @@ async function registrarVisitante(){
                     ahora.toLocaleTimeString(),
 
                 timestamp:
-                    Date.now()
+                    Date.now(),
+
+                dispositivo:
+                    navigator.userAgent
             }
         );
-
-        /* =====================================
-           DESBLOQUEAR CONTENIDO
-        ===================================== */
 
         document
         .getElementById(
