@@ -1,7 +1,7 @@
 /* =========================================================
    TARJETA DIGITAL PREMIUM
-   FULL MOBILE FIRST
-   JHULMAR MÁRQUEZ
+   MOBILE FIRST
+   ANDROID + IPHONE
 ========================================================= */
 
 :root{
@@ -17,16 +17,17 @@
     --bg:#F4F7FB;
 
     --text:#1E293B;
-
     --text-soft:#64748B;
 
     --border:#E2E8F0;
 
+    --success:#16A34A;
+
     --shadow:
-        0 20px 50px rgba(15,23,42,.12);
+        0 15px 35px rgba(15,23,42,.10);
 
     --shadow-lg:
-        0 30px 70px rgba(15,23,42,.20);
+        0 25px 60px rgba(15,23,42,.18);
 
     --radius-xl:32px;
     --radius-lg:24px;
@@ -67,6 +68,8 @@ body{
         );
 
     overflow:hidden;
+
+    color:var(--text);
 }
 
 /* =========================================================
@@ -85,17 +88,17 @@ body{
     justify-content:center;
     align-items:center;
 
-    padding:24px;
+    padding:20px;
 
     background:
-        rgba(15,23,42,.55);
+        rgba(15,23,42,.60);
 
     backdrop-filter:
-        blur(14px);
+        blur(12px);
 }
 
 /* =========================================================
-   MODAL
+   MODAL REGISTRO
 ========================================================= */
 
 .modal-registro{
@@ -104,7 +107,7 @@ body{
 
     max-width:420px;
 
-    background:white;
+    background:#FFFFFF;
 
     border-radius:32px;
 
@@ -114,15 +117,15 @@ body{
         var(--shadow-lg);
 
     animation:
-        aparecer .25s ease;
+        fadeUp .25s ease;
 }
 
 .modal-logo{
 
-    width:80px;
-    height:80px;
+    width:82px;
+    height:82px;
 
-    margin:0 auto 18px;
+    margin:0 auto 20px;
 
     border-radius:50%;
 
@@ -132,14 +135,14 @@ body{
 
     font-size:34px;
 
+    color:white;
+
     background:
         linear-gradient(
             135deg,
             var(--accent),
             var(--accent-dark)
         );
-
-    color:white;
 }
 
 .modal-registro h2{
@@ -161,7 +164,7 @@ body{
 
     color:var(--text-soft);
 
-    line-height:1.5;
+    line-height:1.6;
 
     margin-bottom:22px;
 }
@@ -170,17 +173,16 @@ body{
 
     width:100%;
 
-    height:56px;
-
-    border:none;
+    height:58px;
 
     border-radius:18px;
 
-    padding:0 18px;
+    border:
+        1px solid var(--border);
 
     background:#F8FAFC;
 
-    border:1px solid var(--border);
+    padding:0 18px;
 
     font-size:15px;
 
@@ -201,7 +203,7 @@ body{
 
     width:100%;
 
-    height:56px;
+    height:58px;
 
     border:none;
 
@@ -209,10 +211,10 @@ body{
 
     cursor:pointer;
 
+    color:white;
+
     font-size:16px;
     font-weight:900;
-
-    color:white;
 
     background:
         linear-gradient(
@@ -222,7 +224,7 @@ body{
         );
 
     box-shadow:
-        0 15px 35px rgba(249,115,22,.25);
+        0 15px 30px rgba(249,115,22,.25);
 }
 
 /* =========================================================
@@ -232,9 +234,12 @@ body{
 .contenido{
 
     width:100%;
-    height:100vh;
+
+    min-height:100vh;
 
     overflow-y:auto;
+
+    background:white;
 
     transition:.25s ease;
 }
@@ -247,16 +252,16 @@ body{
 }
 
 /* =========================================================
-   HEADER
+   CABECERA
 ========================================================= */
 
 .header-card{
 
-    padding:40px 24px;
-
     text-align:center;
 
     color:white;
+
+    padding:36px 22px;
 
     background:
         linear-gradient(
@@ -264,6 +269,12 @@ body{
             var(--primary),
             var(--primary-dark)
         );
+
+    border-bottom-left-radius:32px;
+    border-bottom-right-radius:32px;
+
+    box-shadow:
+        0 15px 40px rgba(31,60,136,.20);
 }
 
 .badge{
@@ -277,6 +288,8 @@ body{
 
     border-radius:999px;
 
+    margin-bottom:18px;
+
     background:
         rgba(255,255,255,.12);
 
@@ -287,8 +300,6 @@ body{
     font-weight:900;
 
     letter-spacing:1px;
-
-    margin-bottom:22px;
 }
 
 #nombreUsuario{
@@ -310,36 +321,54 @@ body{
 
     opacity:.95;
 
-    margin-bottom:12px;
+    margin-bottom:10px;
 }
 
 .descripcion{
 
-    max-width:300px;
+    font-size:14px;
+
+    opacity:.85;
+
+    max-width:320px;
 
     margin:auto;
 
     line-height:1.5;
-
-    opacity:.85;
-
-    font-size:14px;
 }
 
 /* =========================================================
-   VIDEO
+   VIDEO YOUTUBE
 ========================================================= */
 
 .video-card{
 
-    background:black;
-
     width:100%;
 
-    aspect-ratio:9/16;
+    background:#000;
+
+    position:relative;
+
+    overflow:hidden;
+
+    margin-top:18px;
+}
+
+.video-card::before{
+
+    content:"";
+
+    display:block;
+
+    padding-top:56.25%;
 }
 
 .video-card iframe{
+
+    position:absolute;
+
+    top:0;
+    left:0;
 
     width:100%;
     height:100%;
@@ -359,28 +388,34 @@ body{
     flex-direction:column;
 
     gap:16px;
-
-    background:white;
 }
 
 .btn{
 
     width:100%;
 
-    height:60px;
+    min-height:64px;
 
-    border-radius:20px;
+    border-radius:22px;
 
     text-decoration:none;
 
     display:flex;
-    align-items:center;
     justify-content:center;
+    align-items:center;
 
-    font-size:16px;
+    text-align:center;
+
+    font-size:17px;
     font-weight:900;
 
-    transition:.18s ease;
+    transition:.20s ease;
+}
+
+.btn:hover{
+
+    transform:
+        translateY(-2px);
 }
 
 .btn-contacto{
@@ -395,7 +430,7 @@ body{
     color:white;
 
     box-shadow:
-        0 15px 35px rgba(31,60,136,.25);
+        0 15px 35px rgba(31,60,136,.22);
 }
 
 .btn-web{
@@ -410,27 +445,21 @@ body{
     color:white;
 
     box-shadow:
-        0 15px 35px rgba(249,115,22,.25);
-}
-
-.btn:hover{
-
-    transform:
-        translateY(-2px);
+        0 15px 35px rgba(249,115,22,.22);
 }
 
 /* =========================================================
    ANIMACIÓN
 ========================================================= */
 
-@keyframes aparecer{
+@keyframes fadeUp{
 
     from{
 
         opacity:0;
 
         transform:
-            translateY(20px);
+            translateY(15px);
     }
 
     to{
@@ -452,13 +481,15 @@ body{
 
         display:flex;
         justify-content:center;
+        align-items:center;
     }
 
     .contenido{
 
-        max-width:500px;
+        width:100%;
+        max-width:520px;
 
-        background:white;
+        min-height:100vh;
 
         box-shadow:
             var(--shadow-lg);
@@ -473,7 +504,7 @@ body{
 
     #nombreUsuario{
 
-        font-size:28px;
+        font-size:27px;
     }
 
     #cargoUsuario{
@@ -484,5 +515,12 @@ body{
     .modal-registro{
 
         padding:28px 22px;
+    }
+
+    .btn{
+
+        min-height:58px;
+
+        font-size:15px;
     }
 }
