@@ -215,6 +215,9 @@ document
 /* =========================================================
    AGREGAR A CONTACTOS
 ========================================================= */
+/* =========================================================
+   CONTACTAR
+========================================================= */
 
 document
 .getElementById(
@@ -226,31 +229,8 @@ document
 
         e.preventDefault();
 
-        const vCard =
-
-`BEGIN:VCARD
-VERSION:3.0
-FN:${usuario.nombre}
-TITLE:${usuario.cargo}
-TEL;TYPE=CELL:${usuario.telefono}
-URL:${usuario.web}
-END:VCARD`;
-
-        const blob =
-            new Blob(
-                [vCard],
-                {
-                    type:"text/vcard"
-                }
-            );
-
-        const vcardURL =
-            URL.createObjectURL(
-                blob
-            );
-
         window.location.href =
-            vcardURL;
+            `tel:${usuario.telefono}`;
     }
 );
 
