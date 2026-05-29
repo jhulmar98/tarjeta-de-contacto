@@ -1,6 +1,7 @@
 /* =========================================================
-   TARJETA DIGITAL INTELIGENTE
-   PRODUCCIÓN ENTERPRISE
+   TARJETA DIGITAL PREMIUM
+   FULL MOBILE FIRST
+   JHULMAR MÁRQUEZ
 ========================================================= */
 
 :root{
@@ -11,24 +12,25 @@
     --accent:#F97316;
     --accent-dark:#EA580C;
 
+    --white:#FFFFFF;
+
     --bg:#F4F7FB;
 
-    --card:#FFFFFF;
-
     --text:#1E293B;
+
     --text-soft:#64748B;
 
     --border:#E2E8F0;
 
     --shadow:
-        0 15px 40px rgba(15,23,42,.10);
+        0 20px 50px rgba(15,23,42,.12);
 
     --shadow-lg:
-        0 25px 60px rgba(15,23,42,.18);
+        0 30px 70px rgba(15,23,42,.20);
 
-    --radius-xl:28px;
-    --radius-lg:22px;
-    --radius-md:16px;
+    --radius-xl:32px;
+    --radius-lg:24px;
+    --radius-md:18px;
 }
 
 /* =========================================================
@@ -43,6 +45,8 @@
 
 html,
 body{
+
+    width:100%;
     height:100%;
 }
 
@@ -50,7 +54,9 @@ body{
 
     font-family:
         Inter,
-        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
         sans-serif;
 
     background:
@@ -59,12 +65,6 @@ body{
             #EEF2FF,
             #F8FAFC
         );
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    padding:20px;
 
     overflow:hidden;
 }
@@ -79,17 +79,19 @@ body{
 
     inset:0;
 
-    background:
-        rgba(15,23,42,.35);
-
-    backdrop-filter:
-        blur(8px);
+    z-index:9999;
 
     display:flex;
     justify-content:center;
     align-items:center;
 
-    z-index:9999;
+    padding:24px;
+
+    background:
+        rgba(15,23,42,.55);
+
+    backdrop-filter:
+        blur(14px);
 }
 
 /* =========================================================
@@ -99,13 +101,14 @@ body{
 .modal-registro{
 
     width:100%;
+
     max-width:420px;
 
-    background:#fff;
+    background:white;
 
-    border-radius:28px;
+    border-radius:32px;
 
-    padding:32px;
+    padding:34px 28px;
 
     box-shadow:
         var(--shadow-lg);
@@ -114,13 +117,40 @@ body{
         aparecer .25s ease;
 }
 
+.modal-logo{
+
+    width:80px;
+    height:80px;
+
+    margin:0 auto 18px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:34px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--accent),
+            var(--accent-dark)
+        );
+
+    color:white;
+}
+
 .modal-registro h2{
 
     text-align:center;
 
     color:var(--primary);
 
-    font-size:28px;
+    font-size:30px;
+
+    font-weight:900;
 
     margin-bottom:10px;
 }
@@ -131,29 +161,30 @@ body{
 
     color:var(--text-soft);
 
-    margin-bottom:22px;
+    line-height:1.5;
 
-    font-size:14px;
+    margin-bottom:22px;
 }
 
 .modal-registro input{
 
     width:100%;
 
-    height:52px;
+    height:56px;
 
-    padding:0 16px;
+    border:none;
 
-    border-radius:16px;
+    border-radius:18px;
 
-    border:
-        1px solid var(--border);
+    padding:0 18px;
+
+    background:#F8FAFC;
+
+    border:1px solid var(--border);
 
     font-size:15px;
 
     margin-bottom:14px;
-
-    transition:.15s ease;
 }
 
 .modal-registro input:focus{
@@ -170,11 +201,18 @@ body{
 
     width:100%;
 
-    height:52px;
+    height:56px;
 
     border:none;
 
-    border-radius:16px;
+    border-radius:18px;
+
+    cursor:pointer;
+
+    font-size:16px;
+    font-weight:900;
+
+    color:white;
 
     background:
         linear-gradient(
@@ -183,35 +221,8 @@ body{
             var(--accent-dark)
         );
 
-    color:#fff;
-
-    font-size:15px;
-    font-weight:800;
-
-    cursor:pointer;
-
-    transition:.18s ease;
-}
-
-.modal-registro button:hover{
-
-    transform:translateY(-2px);
-
-    filter:brightness(1.03);
-}
-
-/* =========================================================
-   CONTENIDO BLOQUEADO
-========================================================= */
-
-.bloqueado{
-
-    filter:
-        blur(12px);
-
-    pointer-events:none;
-
-    user-select:none;
+    box-shadow:
+        0 15px 35px rgba(249,115,22,.25);
 }
 
 /* =========================================================
@@ -221,16 +232,31 @@ body{
 .contenido{
 
     width:100%;
-    max-width:720px;
+    height:100vh;
+
+    overflow-y:auto;
 
     transition:.25s ease;
 }
 
+.bloqueado{
+
+    filter:blur(12px);
+
+    pointer-events:none;
+}
+
 /* =========================================================
-   CARD PRINCIPAL
+   HEADER
 ========================================================= */
 
 .header-card{
+
+    padding:40px 24px;
+
+    text-align:center;
+
+    color:white;
 
     background:
         linear-gradient(
@@ -238,37 +264,66 @@ body{
             var(--primary),
             var(--primary-dark)
         );
+}
 
-    color:white;
+.badge{
 
-    text-align:center;
+    display:inline-flex;
 
-    padding:40px 30px;
+    align-items:center;
+    justify-content:center;
 
-    border-radius:
-        var(--radius-xl)
-        var(--radius-xl)
-        0
-        0;
+    padding:10px 18px;
 
-    box-shadow:
-        var(--shadow);
+    border-radius:999px;
+
+    background:
+        rgba(255,255,255,.12);
+
+    border:
+        1px solid rgba(255,255,255,.18);
+
+    font-size:11px;
+    font-weight:900;
+
+    letter-spacing:1px;
+
+    margin-bottom:22px;
 }
 
 #nombreUsuario{
 
-    font-size:34px;
+    font-size:32px;
+
     font-weight:900;
 
-    margin-bottom:10px;
+    line-height:1.2;
+
+    margin-bottom:8px;
 }
 
 #cargoUsuario{
 
     font-size:18px;
+
     font-weight:500;
 
     opacity:.95;
+
+    margin-bottom:12px;
+}
+
+.descripcion{
+
+    max-width:300px;
+
+    margin:auto;
+
+    line-height:1.5;
+
+    opacity:.85;
+
+    font-size:14px;
 }
 
 /* =========================================================
@@ -277,11 +332,11 @@ body{
 
 .video-card{
 
-    background:#000;
+    background:black;
 
-    aspect-ratio:16/9;
+    width:100%;
 
-    overflow:hidden;
+    aspect-ratio:9/16;
 }
 
 .video-card iframe{
@@ -298,46 +353,34 @@ body{
 
 .acciones{
 
-    background:#fff;
-
-    padding:28px;
+    padding:24px;
 
     display:flex;
     flex-direction:column;
 
-    gap:14px;
+    gap:16px;
 
-    border-radius:
-        0
-        0
-        var(--radius-xl)
-        var(--radius-xl);
-
-    box-shadow:
-        var(--shadow);
+    background:white;
 }
 
 .btn{
 
-    height:56px;
+    width:100%;
 
-    border-radius:18px;
+    height:60px;
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    border-radius:20px;
 
     text-decoration:none;
 
-    font-size:15px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:16px;
     font-weight:900;
 
     transition:.18s ease;
-}
-
-.btn:hover{
-
-    transform:translateY(-2px);
 }
 
 .btn-contacto{
@@ -350,6 +393,9 @@ body{
         );
 
     color:white;
+
+    box-shadow:
+        0 15px 35px rgba(31,60,136,.25);
 }
 
 .btn-web{
@@ -362,6 +408,15 @@ body{
         );
 
     color:white;
+
+    box-shadow:
+        0 15px 35px rgba(249,115,22,.25);
+}
+
+.btn:hover{
+
+    transform:
+        translateY(-2px);
 }
 
 /* =========================================================
@@ -375,7 +430,7 @@ body{
         opacity:0;
 
         transform:
-            translateY(15px);
+            translateY(20px);
     }
 
     to{
@@ -391,7 +446,30 @@ body{
    TABLET
 ========================================================= */
 
-@media(max-width:768px){
+@media(min-width:768px){
+
+    body{
+
+        display:flex;
+        justify-content:center;
+    }
+
+    .contenido{
+
+        max-width:500px;
+
+        background:white;
+
+        box-shadow:
+            var(--shadow-lg);
+    }
+}
+
+/* =========================================================
+   IPHONE PEQUEÑO
+========================================================= */
+
+@media(max-width:390px){
 
     #nombreUsuario{
 
@@ -405,68 +483,6 @@ body{
 
     .modal-registro{
 
-        padding:24px;
-    }
-}
-
-/* =========================================================
-   MÓVIL
-========================================================= */
-
-@media(max-width:600px){
-
-    body{
-
-        padding:14px;
-    }
-
-    .modal-registro{
-
-        width:100%;
-        max-width:none;
-
-        border-radius:22px;
-    }
-
-    #nombreUsuario{
-
-        font-size:24px;
-    }
-
-    #cargoUsuario{
-
-        font-size:15px;
-    }
-
-    .header-card{
-
-        padding:30px 20px;
-    }
-
-    .acciones{
-
-        padding:20px;
-    }
-
-    .btn{
-
-        height:52px;
-    }
-}
-
-/* =========================================================
-   iPHONE PEQUEÑO
-========================================================= */
-
-@media(max-width:390px){
-
-    #nombreUsuario{
-
-        font-size:22px;
-    }
-
-    .modal-registro h2{
-
-        font-size:24px;
+        padding:28px 22px;
     }
 }
